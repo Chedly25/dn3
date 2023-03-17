@@ -566,7 +566,6 @@ class DatasetConfig:
             return (sess, *self._prepare_session(r, self.tlen, self.decimate, self._sfreq, self._samples, self.picks,
                                                 self.exclude_channels, self.rename_channels, self.hpf, self.lpf))
         sess, raw, tlen, picks, new_sfreq = load_and_prepare(session)
-        print("CREATE RAW RECORDINGS = ", self._create_raw_recordings)
         # Fixme - deprecate the decimate option in favour of specifying desired sfreq's
         if self._create_raw_recordings:
             if self._on_the_fly:
