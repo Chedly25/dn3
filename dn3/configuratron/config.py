@@ -566,7 +566,7 @@ class DatasetConfig:
             return (sess, *self._prepare_session(r, self.tlen, self.decimate, self._sfreq, self._samples, self.picks,
                                                 self.exclude_channels, self.rename_channels, self.hpf, self.lpf))
         sess, raw, tlen, picks, new_sfreq = load_and_prepare(session)
-
+        print("CREATE RAW RECORDINGS = ", self._create_raw_recordings)
         # Fixme - deprecate the decimate option in favour of specifying desired sfreq's
         if self._create_raw_recordings:
             if self._on_the_fly:
@@ -585,9 +585,6 @@ class DatasetConfig:
                         if len(ann) > 1:
                             print("More than one annotation found for {}. Falling back to {}".format(patt, ann[0]))
                         raw.set_annotations(read_annotations(ann[0]))
-                print("BIBI")
-                print(self.events)
-                print("OMG")
                 epochs = make_epochs_from_raw(raw, self.tmin, tlen, event_ids=self.events, baseline=self.baseline,
                                               decim=self.decimate, filter_bp=self.bandpass, drop_bad=self.drop_bad,
                                               use_annotations=use_annotations, chunk_duration=self.chunk_duration)
