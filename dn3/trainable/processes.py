@@ -494,6 +494,9 @@ class BaseProcess(object):
         loader_kwargs.setdefault('batch_size', batch_size)
         loader_kwargs = self._optimize_dataloader_kwargs(**loader_kwargs)
         training_dataset = self._make_dataloader(training_dataset, training=True, **loader_kwargs)
+        data_iterator = iter(training_dataset)
+        for el in data_iterator:
+            print(el)
 
         if resume_epoch is None:
             if resume_iteration is None or resume_iteration < len(training_dataset):
