@@ -230,6 +230,7 @@ class BaseProcess(object):
         loss_fn = self.loss
         if hasattr(self.loss, 'to'):
             loss_fn = loss_fn.to(device)
+        print(inputs[-1])
         return loss_fn(outputs, inputs[-1])
 
     def calculate_metrics(self, inputs, outputs):
@@ -644,10 +645,6 @@ class StandardClassification(BaseProcess):
         return (inputs[-1] == outputs.argmax(dim=-1)).float().mean().item()
 
     def forward(self, *inputs):
-        print("MMMMMMMMMMMMMMMMMMMMMMMM")
-        print("MMMMMMMMMMMMMMMMMMMMMMMM")
-        print("MMMMMMMMMMMMMMMMMMMMMMMM")
-        print("MMMMMMMMMMMMMMMMMMMMMMMM")
         dummy_tensor = torch.tensor([10, 11, 12])
         # Add the new tensor to the tuple
         inputs = inputs + (dummy_tensor,)
