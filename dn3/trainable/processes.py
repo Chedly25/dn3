@@ -559,7 +559,7 @@ class BaseProcess(object):
             for iteration in pbar:
                 inputs = self._get_batch(data_iterator)
                 dummy_tensor = torch.tensor([1, 0, 1, 1, 0, 0, 1, 1])
-                training = training + (dummy_tensor,)
+                inputs = inputs + (dummy_tensor,)
                 train_metrics = self.train_step(*inputs)
                 train_metrics['lr'] = self.optimizer.param_groups[0]['lr']
                 if 'momentum' in self.optimizer.defaults:
