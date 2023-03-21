@@ -645,7 +645,7 @@ class StandardClassification(BaseProcess):
     def forward(self, *inputs):
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
-        print(inputs.shape)
+        print(inputs)
         print(len(*inputs))
         print(len(inputs[:-1]))
         print(len(*inputs))
