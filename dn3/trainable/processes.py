@@ -647,7 +647,7 @@ class StandardClassification(BaseProcess):
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         print(len(*inputs))
         print(len(*inputs))
-        print(len(*inputs[:-1]))
+        print(len(inputs[:-1]))
         print(len(*inputs))
         print(len(*inputs))
         print("yo bro")
