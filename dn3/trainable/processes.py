@@ -643,8 +643,8 @@ class StandardClassification(BaseProcess):
         return (inputs[-1] == outputs.argmax(dim=-1)).float().mean().item()
 
     def forward(self, *inputs):
-        #dummy_tensor = torch.tensor([1,0,1,1,0,0])
-        #inputs = inputs + (dummy_tensor,)
+        dummy_tensor = torch.tensor([1,0,1,1,0,0, 1, 1])
+        inputs = inputs + (dummy_tensor,)
         print("AAAAAA")
         print(*inputs[-1])
         print("AAAAAA")
