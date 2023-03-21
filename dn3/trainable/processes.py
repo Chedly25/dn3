@@ -558,11 +558,11 @@ class BaseProcess(object):
             data_iterator = iter(training_dataset)
             for iteration in pbar:
                 inputs = self._get_batch(data_iterator)
-                dummy_tensor = torch.tensor([1, 0, 1, 1, 0, 0, 1, 1])
+                inputs.append(torch.tensor([1, 0, 1, 1, 0, 0, 1, 1]))
                 print("ADASASASAS")
-                print(type(inputs))
+                
                 print("BBBBBBBER")
-                inputs = list(torch.cat((inputs[0], dummy_tensor.unsqueeze(0).unsqueeze(0)), dim=1))
+                #inputs = torch.cat((inputs[0], dummy_tensor.unsqueeze(0).unsqueeze(0)), dim=1)
                 #inputs = inputs + (dummy_tensor,)
                 print(inputs)
                 train_metrics = self.train_step(*inputs)
