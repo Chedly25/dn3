@@ -559,8 +559,8 @@ class BaseProcess(object):
                                initial=resume_iteration, total=len(training_dataset))
             data_iterator = iter(training_dataset)
             for iteration in pbar:
+                inputs = self._get_batch(data_iterator)
                 if(len(inputs) == 1):
-                    inputs = self._get_batch(data_iterator)
                     inputs.append(torch.tensor([1, 0, 1, 1, 0, 0, 1, 1]))
                 print("ADASASASAS")
                 
