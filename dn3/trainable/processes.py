@@ -643,7 +643,9 @@ class StandardClassification(BaseProcess):
         return (inputs[-1] == outputs.argmax(dim=-1)).float().mean().item()
 
     def forward(self, *inputs):
-        print(*inputs)
+        print("AAAAAA")
+        print(*inputs[:-1])
+        print("AAAAAA")
         if isinstance(self.classifier, Classifier) and self.classifier.return_features:
             prediction, _ = self.classifier(*inputs[:-1])
         else:
