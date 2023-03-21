@@ -111,7 +111,23 @@ class Classifier(DN3BaseModel):
         self.load_state_dict(self._init_state)
 
     def forward(self, *x):
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
+        print("AAAAAAAAAAAA")
         print(*x)
+        print("BBBBBBBBBBBBB")
         features = self.features_forward(*x)
         if self.return_features:
             return self.classifier_forward(features), features
