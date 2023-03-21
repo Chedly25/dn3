@@ -557,9 +557,6 @@ class BaseProcess(object):
             data_iterator = iter(training_dataset)
             for iteration in pbar:
                 inputs = self._get_batch(data_iterator)
-                print("CCCCCC")
-                print(inputs)
-                print("DDDDDDDDD")
                 train_metrics = self.train_step(*inputs)
                 train_metrics['lr'] = self.optimizer.param_groups[0]['lr']
                 if 'momentum' in self.optimizer.defaults:
