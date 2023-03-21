@@ -491,6 +491,7 @@ class BaseProcess(object):
         validation_log : Dataframe
                          Validation metrics after each epoch of training as a pandas dataframe
         """
+        print(training_dataset.get_thinkers())
         loader_kwargs.setdefault('batch_size', batch_size)
         loader_kwargs = self._optimize_dataloader_kwargs(**loader_kwargs)
         training_dataset = self._make_dataloader(training_dataset, training=True, **loader_kwargs)
