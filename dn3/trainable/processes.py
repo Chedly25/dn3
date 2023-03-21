@@ -645,15 +645,11 @@ class StandardClassification(BaseProcess):
     def forward(self, *inputs):
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
-        print(inputs)
-        print(len(*inputs))
-        print(len(inputs[:-1]))
-        print(len(*inputs))
-        print(len(*inputs))
-        print("yo bro")
-        print(len(*inputs))
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
+        dummy_tensor = torch.tensor([10, 11, 12])
+        # Add the new tensor to the tuple
+        inputs = inputs + (dummy_tensor,)
         if isinstance(self.classifier, Classifier) and self.classifier.return_features:
             prediction, _ = self.classifier(*inputs[:-1])
         else:
