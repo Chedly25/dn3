@@ -646,6 +646,12 @@ class StandardClassification(BaseProcess):
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         print(len(*inputs))
+        print(len(*inputs))
+        print(len(*inputs))
+        print(len(*inputs))
+        print(len(*inputs))
+        print("yo bro")
+        print(len(*inputs))
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         print("MMMMMMMMMMMMMMMMMMMMMMMM")
         if isinstance(self.classifier, Classifier) and self.classifier.return_features:
