@@ -222,7 +222,7 @@ class BaseProcess(object):
         Loss :
              Single loss quantity to be minimized.
         """
-        print(inputs)
+        print(inputs.shape)
         if isinstance(outputs, (tuple, list)):
             device = outputs[0].device
         else:
