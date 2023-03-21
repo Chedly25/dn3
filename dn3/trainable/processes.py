@@ -222,7 +222,6 @@ class BaseProcess(object):
         Loss :
              Single loss quantity to be minimized.
         """
-        print(inputs[0].shape)
         if isinstance(outputs, (tuple, list)):
             device = outputs[0].device
         else:
@@ -230,7 +229,6 @@ class BaseProcess(object):
         loss_fn = self.loss
         if hasattr(self.loss, 'to'):
             loss_fn = loss_fn.to(device)
-        print(inputs[-1].shape)
         return loss_fn(outputs, inputs[-1])
 
     def calculate_metrics(self, inputs, outputs):
@@ -645,9 +643,7 @@ class StandardClassification(BaseProcess):
         return (inputs[-1] == outputs.argmax(dim=-1)).float().mean().item()
 
     def forward(self, *inputs):
-        dummy_tensor = torch.tensor([10, 11, 12])
-        # Add the new tensor to the tuple
-        inputs = inputs + (dummy_tensor,)
+        print(*inputs)
         if isinstance(self.classifier, Classifier) and self.classifier.return_features:
             prediction, _ = self.classifier(*inputs[:-1])
         else:
