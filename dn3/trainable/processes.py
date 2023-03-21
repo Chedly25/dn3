@@ -230,7 +230,7 @@ class BaseProcess(object):
         loss_fn = self.loss
         if hasattr(self.loss, 'to'):
             loss_fn = loss_fn.to(device)
-        print(inputs[-1])
+        print(inputs[-1].shape)
         return loss_fn(outputs, inputs[-1])
 
     def calculate_metrics(self, inputs, outputs):
