@@ -560,7 +560,7 @@ class BaseProcess(object):
                 inputs = self._get_batch(data_iterator)
                 dummy_tensor = torch.tensor([1, 0, 1, 1, 0, 0, 1, 1])
                 print(inputs[0])
-                inputs = torch.cat((inputs, dummy_tensor.unsqueeze(0).unsqueeze(0)), dim=1)
+                inputs = list(torch.cat((inputs[0], dummy_tensor.unsqueeze(0).unsqueeze(0)), dim=1))
                 #inputs = inputs + (dummy_tensor,)
                 print(inputs)
                 train_metrics = self.train_step(*inputs)
