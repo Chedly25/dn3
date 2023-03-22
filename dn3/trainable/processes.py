@@ -560,7 +560,7 @@ class BaseProcess(object):
             data_iterator = iter(training_dataset)
             for iteration in pbar:
                 inputs = self._get_batch(data_iterator)
-                if(len(inputs) == 0):
+                if(len(inputs) == 1):
                     inputs.append(torch.tensor([(1., 1.), (1., 2.), (1., 3.), (1., 4.), (1., 5.),  
                                                 (2., 1.), (2., 2.), (2., 3.), (2., 4.), (2., 5.),  
                                                 (3., 1.), (3., 2.), (3., 3.), (3., 4.), (3., 5.),  
