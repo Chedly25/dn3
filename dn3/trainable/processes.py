@@ -571,7 +571,6 @@ class BaseProcess(object):
                 print("BBBBBBBER")
                 #inputs = torch.cat((inputs[0], dummy_tensor.unsqueeze(0).unsqueeze(0)), dim=1)
                 #inputs = inputs + (dummy_tensor,)
-                print(inputs)
                 train_metrics = self.train_step(*inputs)
                 train_metrics['lr'] = self.optimizer.param_groups[0]['lr']
                 if 'momentum' in self.optimizer.defaults:
