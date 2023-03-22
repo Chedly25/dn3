@@ -230,7 +230,7 @@ class BaseProcess(object):
         if hasattr(self.loss, 'to'):
             loss_fn = loss_fn.to(device)
         print("HUHUHUHUHUHUHU")
-        print(inputs[-1])
+        print(outputs)
         print("BWOAHBWOAHBWOAH")
         return loss_fn(outputs, inputs[-1])
 
