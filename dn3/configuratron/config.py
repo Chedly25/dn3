@@ -584,11 +584,16 @@ class DatasetConfig:
                         if len(ann) > 1:
                             print("More than one annotation found for {}. Falling back to {}".format(patt, ann[0]))
                         raw.set_annotations(read_annotations(ann[0]))
+                print("RGTRTRGTRGTERGTRGTERGTE")
                 print(self.events)
+                print("RGTRTRGTRGTERGTRGTERGTE")
                 epochs = make_epochs_from_raw(raw, self.tmin, tlen, event_ids=self.events, baseline=self.baseline,
                                               decim=self.decimate, filter_bp=self.bandpass, drop_bad=self.drop_bad,
                                               use_annotations=use_annotations, chunk_duration=self.chunk_duration)
             else:
+                print("AAAAAAAAAAAAAAA")
+                print(self.events)
+                print("BBBBBBBBBBBBBBB")
                 epochs = raw
             event_map = {v: v for v in self.events.values()} if use_annotations else self.events
 
