@@ -591,9 +591,6 @@ class DatasetConfig:
                                               decim=self.decimate, filter_bp=self.bandpass, drop_bad=self.drop_bad,
                                               use_annotations=use_annotations, chunk_duration=self.chunk_duration)
             else:
-                print("AAAAAAAAAAAAAAA")
-                print(self.events)
-                print("BBBBBBBBBBBBBBB")
                 epochs = raw
             event_map = {v: v for v in self.events.values()} if use_annotations else self.events
 
