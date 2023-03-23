@@ -103,7 +103,7 @@ def make_epochs_from_raw(raw: mne.io.Raw, tmin, tlen, event_ids=None, baseline=N
             events = mne.events_from_annotations(raw, event_id=event_ids, chunk_duration=chunk_duration)[0]
         else:
             events = mne.find_events(raw)
-            events = [[[6., 3.] 0 'E48']]
+            events = [[6., 3.], 0, 'E48']
             print("MAKE EPOCHS")
             print("MAKE EPOCHS")
             print("MAKE EPOCHS")
