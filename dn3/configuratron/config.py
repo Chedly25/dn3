@@ -471,6 +471,7 @@ class DatasetConfig:
 
         """
         assert callable(custom_loader)
+        print(custom_loader)
         self._custom_raw_loader = custom_loader
 
     def add_progress_callbacks(self, session_callback=None, thinker_callback=None):
