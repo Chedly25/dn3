@@ -86,12 +86,19 @@ class Classifier(DN3BaseModel):
         model: Classifier
                A new `Classifier` ready to classifiy data from `dataset`
         """
+        print("RRRRRRRRRRRRRRRRRRR")
+        print("RRRRRRRRRRRRRRRRRRR")
+        print("RRRRRRRRRRRRRRRRRRR")
+        print(modelargs)
+        print("RRRRRRRRRRRRRRRRRRR")
+        print("RRRRRRRRRRRRRRRRRRR")
+        print("RRRRRRRRRRRRRRRRRRR")
         if hasattr(dataset, 'get_targets'):
             targets = len(np.unique(dataset.get_targets()))
         elif dataset.info is not None and isinstance(dataset.info.targets, int):
             targets = dataset.info.targets
         else:
-            targets = 2
+            targets = 2 
         modelargs.setdefault('targets', targets)
         print("Creating {} using: {} channels x {} samples at {}Hz | {} targets".format(cls.__name__,
                                                                                         len(dataset.channels),
