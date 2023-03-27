@@ -561,7 +561,7 @@ class BaseProcess(object):
             for iteration in pbar:
                 inputs = self._get_batch(data_iterator)
                 if(len(inputs) == 1):
-                    inputs.append(torch.tensor([0, 0, 0, 0, 0, 0, 0, 0]))
+                    inputs.append(torch.tensor([1, 1, 1, 1, 1, 1, 1, 1]))
                 print("ADASASASAS")
                 
                 print("BBBBBBBER")
