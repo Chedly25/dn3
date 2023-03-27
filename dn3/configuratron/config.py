@@ -575,7 +575,7 @@ class DatasetConfig:
                 recording = RawTorchRecording(raw, tlen, stride=self.stride, decimate=self.decimate, ch_ind_picks=picks,
                                               bad_spans=bad_spans)
         else:
-            use_annotations = True #self.events is not None and True in [isinstance(x, str) for x in self.events.keys()]
+            use_annotations = self.events is not None and True in [isinstance(x, str) for x in self.events.keys()]
             if not isinstance(raw, (mne.Epochs, mne.epochs.EpochsFIF)):  # Annoying other epochs type
                 if use_annotations and self.annotation_format is not None:
                     patt = self.annotation_format.format(subject=thinker_id, session=sess_id)
@@ -592,6 +592,13 @@ class DatasetConfig:
                                               use_annotations=use_annotations, chunk_duration=self.chunk_duration)
             else:
                 epochs = raw
+                print("BBBBBBBBBRRRRRRRRRRRR")
+                print("BBBBBBBBBRRRRRRRRRRRR")
+                print("BBBBBBBBBRRRRRRRRRRRR")
+                print(epochs)
+                print("BBBBBBBBBRRRRRRRRRRRR")
+                print("BBBBBBBBBRRRRRRRRRRRR")
+                print("BBBBBBBBBRRRRRRRRRRRR")
             event_map = {v: v for v in self.events.values()} if use_annotations else self.events
 
             self._unique_events = self._unique_events.union(set(np.unique(epochs.events[:, -1])))
