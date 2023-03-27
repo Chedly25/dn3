@@ -575,7 +575,7 @@ class DatasetConfig:
                 recording = RawTorchRecording(raw, tlen, stride=self.stride, decimate=self.decimate, ch_ind_picks=picks,
                                               bad_spans=bad_spans)
         else:
-            use_annotations = self.events is not None and True in [isinstance(x, str) for x in self.events.keys()]
+            use_annotations = True #self.events is not None and True in [isinstance(x, str) for x in self.events.keys()]
             if not isinstance(raw, (mne.Epochs, mne.epochs.EpochsFIF)):  # Annoying other epochs type
                 if use_annotations and self.annotation_format is not None:
                     patt = self.annotation_format.format(subject=thinker_id, session=sess_id)
