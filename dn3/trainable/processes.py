@@ -229,9 +229,6 @@ class BaseProcess(object):
         loss_fn = self.loss
         if hasattr(self.loss, 'to'):
             loss_fn = loss_fn.to(device)
-        print("HUHUHUHUHUHUHU")
-        print(inputs[0])
-        print("BWOAHBWOAHBWOAH")
         return loss_fn(outputs, inputs[-1])
 
     def calculate_metrics(self, inputs, outputs):
@@ -562,9 +559,6 @@ class BaseProcess(object):
                 inputs = self._get_batch(data_iterator)
                 if(len(inputs) == 1):
                     inputs.append(torch.tensor([0,0,0,0,0,0,0,0]))
-                print("ADASASASAS")
-                
-                print("BBBBBBBER")
                 #inputs = torch.cat((inputs[0], dummy_tensor.unsqueeze(0).unsqueeze(0)), dim=1)
                 #inputs = inputs + (dummy_tensor,)
                 train_metrics = self.train_step(*inputs)

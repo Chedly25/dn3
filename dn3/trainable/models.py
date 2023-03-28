@@ -86,13 +86,6 @@ class Classifier(DN3BaseModel):
         model: Classifier
                A new `Classifier` ready to classifiy data from `dataset`
         """
-        print("RRRRRRRRRRRRRRRRRRR")
-        print("RRRRRRRRRRRRRRRRRRR")
-        print("RRRRRRRRRRRRRRRRRRR")
-        print(modelargs)
-        print("RRRRRRRRRRRRRRRRRRR")
-        print("RRRRRRRRRRRRRRRRRRR")
-        print("RRRRRRRRRRRRRRRRRRR")
         if hasattr(dataset, 'get_targets'):
             targets = len(np.unique(dataset.get_targets()))
         elif dataset.info is not None and isinstance(dataset.info.targets, int):
